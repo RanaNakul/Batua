@@ -46,7 +46,7 @@ const Chooseblockchain = ({ setCrypto }) => {
 
       <CryptoCoin
         className=" mt-24 w-[19%]"
-        src="/bitcoin-logo-svgrepo-com.svg"
+        src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=040"
       ></CryptoCoin>
     </div>
   );
