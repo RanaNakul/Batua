@@ -39,10 +39,10 @@ const Wallet = ({ keyPair, index, deleteWallet, crypto }) => {
 
   return (
     <div className="bg-neutral-100 dark:bg-neutral-950 border border-black/10 dark:border-white/8 w-full rounded-2xl mb-10">
-      <div className="flex items-center justify-between p-7">
+      <div className="flex flex-col sm:flex-row gap-4 sm:items-center justify-between p-4 sm:p-7">
         <div className="w-full h-fit mx-auto flex items-center gap-8">
-          <div className="w-fit">
-            <p className="text-3xl font-bold tracking-tighter  text-nowrap">
+          <div className="w-[170px] sm:w-fit">
+            <p className="text-2xl sm:text-3xl font-bold tracking-tighter  text-nowrap">
               {showKeyPair} Wallet {index + 1}
             </p>
           </div>
@@ -93,8 +93,8 @@ const Wallet = ({ keyPair, index, deleteWallet, crypto }) => {
           Delete
         </Button>
       </div>
-      <div className="bg-neutral-200 flex flex-col gap-5 dark:bg-neutral-900 p-7 w-full rounded-2xl">
-        <div className="flex flex-col gap-3">
+      <div className="bg-neutral-200 flex flex-col gap-5 dark:bg-neutral-900 p-7 w-full rounded-2xl text-xs md:text-base">
+        <div className="flex flex-col gap-3 ">
           <p className="text-xl font-bold tracking-tighter ">Public Key</p>
           <EncryptedText
             text={publicKey}
@@ -104,8 +104,18 @@ const Wallet = ({ keyPair, index, deleteWallet, crypto }) => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <p className="text-xl font-bold tracking-tighter ">Private Key</p>
-          <div className="flex items-center justify-between ">
+          <div className="flex items-center justify-between">
+            <p className="text-xl font-bold tracking-tighter ">Private Key</p>
+            <Button
+              size="icon"
+              onClick={() => setShowPK(!showPK)}
+              variant="outline"
+              className="flex min-[546px]:hidden"
+            >
+              {!showPK ? <Eye /> : <EyeOff />}
+            </Button>
+          </div>
+          <div className="flex items-center justify-between  ">
             {showPK ? (
               <EncryptedText
                 text={privateKey}
@@ -124,6 +134,7 @@ const Wallet = ({ keyPair, index, deleteWallet, crypto }) => {
               size="icon"
               onClick={() => setShowPK(!showPK)}
               variant="outline"
+              className="hidden min-[546px]:flex"
             >
               {!showPK ? <Eye /> : <EyeOff />}
             </Button>

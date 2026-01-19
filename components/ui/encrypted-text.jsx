@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -37,7 +37,9 @@ export const EncryptedText = ({
   const animationFrameRef = useRef(null);
   const startTimeRef = useRef(0);
   const lastFlipTimeRef = useRef(0);
-  const scrambleCharsRef = useRef(text ? generateGibberishPreservingSpaces(text, charset).split("") : []);
+  const scrambleCharsRef = useRef(
+    text ? generateGibberishPreservingSpaces(text, charset).split("") : [],
+  );
 
   useEffect(() => {
     if (!isInView) return;
@@ -58,7 +60,10 @@ export const EncryptedText = ({
 
       const elapsedMs = now - startTimeRef.current;
       const totalLength = text.length;
-      const currentRevealCount = Math.min(totalLength, Math.floor(elapsedMs / Math.max(1, revealDelayMs)));
+      const currentRevealCount = Math.min(
+        totalLength,
+        Math.floor(elapsedMs / Math.max(1, revealDelayMs)),
+      );
 
       setRevealCount(currentRevealCount);
 
@@ -98,7 +103,12 @@ export const EncryptedText = ({
   if (!text) return null;
 
   return (
-    <motion.span ref={ref} className={cn(className)} aria-label={text} role="text">
+    <motion.span
+      ref={ref}
+      className={cn("break-all whitespace-pre-wrap", className)}
+      aria-label={text}
+      role="text"
+    >
       {text.split("").map((char, index) => {
         const isRevealed = index < revealCount;
         const displayChar = isRevealed
@@ -111,7 +121,8 @@ export const EncryptedText = ({
         return (
           <span
             key={index}
-            className={cn(isRevealed ? revealedClassName : encryptedClassName)}>
+            className={cn(isRevealed ? revealedClassName : encryptedClassName)}
+          >
             {displayChar}
           </span>
         );

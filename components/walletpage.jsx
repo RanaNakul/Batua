@@ -36,7 +36,7 @@ const WalletPage = ({
         handleCopyPhrase={handleCopyPhrase}
       ></TextRevealCard>
 
-      <div className="flex items-center justify-between py-8">
+      <div className="flex flex-col sm:flex-row gap-5  sm:items-center justify-between py-8">
         <p className=" text-4xl 2xl:text-5xl font-bold normal-case tracking-tighter text-nowrap ">
           Your Wallets
         </p>

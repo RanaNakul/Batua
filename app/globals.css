@@ -48,6 +48,9 @@ body{
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --breakpoint-md2: 55.5rem; /* 888px */
+  --breakpoint-lg2: 71.375rem; /* 1142px */
+  --breakpoint-xl2: 89rem;   /* 1424px */
   --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
   var(--delay, 0ms);
   @keyframes cell-ripple {

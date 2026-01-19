@@ -69,7 +69,7 @@ export const TextRevealCard = ({
   return (
     <div
       className={cn(
-        "bg-neutral-100 dark:bg-neutral-900 border border-black/10 dark:border-white/[0.08] w-full flex items-center justify-between rounded-2xl px-8 relative overflow-hidden",
+        "bg-neutral-100 dark:bg-neutral-900 border border-black/10 dark:border-white/[0.08] w-full flex items-center justify-between gap-2 rounded-2xl px-4 sm:px-8 relative overflow-hidden",
         className,
       )}
     >
@@ -84,7 +84,7 @@ export const TextRevealCard = ({
         className=" w-full"
       >
         {children}
-        <div className="h-26  relative flex items-center overflow-hidden">
+        <div className="h-28 sm:h-26  relative flex items-center overflow-hidden">
           <motion.div
             style={{
               width: "100%",
@@ -130,9 +130,9 @@ export const TextRevealCard = ({
           ></motion.div>
 
           <div className=" overflow-hidden  [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
-            <p className="text-base sm:text-[2rem] py-10 font-bold bg-clip-text text-transparent bg-neutral-400 dark:bg-[#323238]">
-              {text}
-              {isRevealEnabled && <span> (swipe left to right)</span>}
+            <p className="text-base sm:text-[1.5rem] min-[848px]:text-[2rem] py-10 font-bold bg-clip-text text-transparent bg-neutral-400 dark:bg-[#323238]">
+              {text} <br className="block sm:hidden" />
+              {isRevealEnabled && <span>(swipe left to right)</span>}
             </p>
           </div>
           <div>
@@ -156,19 +156,6 @@ export const TextRevealCard = ({
   );
 };
 
-export const TextRevealCardTitle = ({ children, className }) => {
-  return (
-    <h2 className={twMerge("text-white text-lg mb-2", className)}>
-      {children}
-    </h2>
-  );
-};
-
-export const TextRevealCardDescription = ({ children, className }) => {
-  return (
-    <p className={twMerge("text-[#a9a9a9] text-sm", className)}>{children}</p>
-  );
-};
 
 const Stars = () => {
   const randomMove = () => Math.random() * 4 - 2;
