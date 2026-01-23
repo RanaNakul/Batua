@@ -12,32 +12,32 @@ const Chooseblockchain = ({ setCrypto }) => {
         <p className="text-3xl min-[500px]:text-5xl md2:text-[55px]/14 lg2:text-7xl xl2:text-[85px] 2xl:text-8xl md:mt-2 font-mediu normal-case tracking-tighter text-nowrap ">
           Digital batwa for <br /> a decentralized world
         </p>
-        <p className="text-sm min-[500px]:text-xl 2xl:text-3xl pl-1 mt-0.5 font-medium tracking-tighter text-neutral-800 dark:text-neutral-200">
+        <p className="text-sm min-[500px]:text-xl 2xl:text-3xl pl-1 mt-0.5 font-semibold tracking-tighter text-[#F2A900]">
           Choose a blockchain to get started.
         </p>
 
         <div className=" flex flex-wrap gap-3 sm:gap-4 mt-7 pl-1 justify-start">
           <Button
             onClick={() => setCrypto("Solana")}
-            className="capitalize font-manrope "
+            className="capitalize font-manrope hover:bg-[#F2A900] hover:text-white transition-all duration-150 ease-in-out"
           >
             Solana
           </Button>
           <Button
             onClick={() => setCrypto("Ethereum")}
-            className="capitalize font-manrope "
+            className="capitalize font-manrope hover:bg-[#F2A900] hover:text-white transition-all duration-150 ease-in-out"
           >
             Ethereum
           </Button>
           <Button
             onClick={() => setCrypto("Bitcoin")}
-            className="capitalize font-manrope "
+            className="capitalize font-manrope hover:bg-[#F2A900] hover:text-white transition-all duration-150 ease-in-out"
           >
             Bitcoin
           </Button>
           <Button
             onClick={() => setCrypto("All")}
-            className="capitalize font-manrope "
+            className="capitalize font-manrope hover:bg-[#F2A900] hover:text-white transition-all duration-150 ease-in-out"
           >
             All
           </Button>

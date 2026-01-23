@@ -62,7 +62,7 @@ const Phrasegen = ({
           <p className="text-2xl min-[400px]:text-[32px] min-[944px]:text-[46px] 2xl:text-7xl font-bold normal-case tracking-tighter text-nowrap ">
             Secret Recovery Phrase
           </p>
-          <p className="text-sm min-[944px]:text-xl -mt-1 2xl:text-3xl font-medium tracking-tighter text-neutral-800 dark:text-neutral-200">
+          <p className="text-sm min-[944px]:text-xl -mt-1 2xl:text-3xl font-medium tracking-tighter text-[#F2A900] ">
             Enter your secret phrase or leave blank to generate.
           </p>
         </div>
@@ -86,7 +86,7 @@ const Phrasegen = ({
             ></CryptoCoin>
           )}
         </div>
-        <Button className="mt-5" onClick={() => setCrypto("")}>
+        <Button className="mt-5 hover:bg-[#F2A900] hover:text-white transition-all duration-150 ease-in-out" onClick={() => setCrypto("")}>
           Change blockchain
         </Button>
       </div>
@@ -112,7 +112,7 @@ const Phrasegen = ({
       <Button
         onClick={() => genWallet()}
         disabled={isGen}
-        className="mx-auto px-13 w-full  min-[520px]:w-[195px] mb-20"
+        className="mx-auto px-13 w-full  min-[520px]:w-[195px] mb-20 hover:bg-[#F2A900] hover:text-white transition-all duration-150 ease-in-out"
       >
         Generate Wallet
       </Button>

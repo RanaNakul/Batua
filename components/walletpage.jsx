@@ -11,7 +11,7 @@ const WalletPage = ({
   genWallet,
   deleteWallet,
   deleteAll,
-  crypto
+  crypto,
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -42,7 +42,12 @@ const WalletPage = ({
         </p>
 
         <div className="flex gap-3">
-          <Button onClick={() => genWallet()}>Add Wallet</Button>
+          <Button
+            onClick={() => genWallet()}
+            className="hover:bg-[#F2A900] hover:text-white transition-all duration-150 ease-in-out"
+          >
+            Add Wallet
+          </Button>
           <Button
             onClick={() => deleteAll()}
             className="bg-red-800 text-neutral-100 hover:bg-red-900"

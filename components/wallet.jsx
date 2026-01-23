@@ -42,7 +42,19 @@ const Wallet = ({ keyPair, index, deleteWallet, crypto }) => {
       <div className="flex flex-col sm:flex-row gap-4 sm:items-center justify-between p-4 sm:p-7">
         <div className="w-full h-fit mx-auto flex items-center gap-8">
           <div className="w-[170px] sm:w-fit">
-            <p className="text-2xl sm:text-3xl font-bold tracking-tighter  text-nowrap">
+            <p
+              className={`text-2xl sm:text-3xl font-bold tracking-tighter  text-nowrap 
+              ${
+                userSelectedCoin === "Bitcoin"
+                  ? "text-[#F2A900]"
+                  : userSelectedCoin === "Solana"
+                    ? "  bg-clip-text text-transparent bg-gradient-to-r from-[#DC1FFF] via-[#03E1FF] to-[#00FFA3]"
+                    : userSelectedCoin === "Ethereum" && "text-[#3D3E3F]"
+              }
+           
+              transition-all duration-150 ease-in-out
+              `}
+            >
               {showKeyPair} Wallet {index + 1}
             </p>
           </div>
@@ -87,7 +99,10 @@ const Wallet = ({ keyPair, index, deleteWallet, crypto }) => {
           </div>
         </div>
         <Button
-          onClick={() => deleteWallet(index)}
+          onClick={() => {
+            deleteWallet(index);
+            setShowPK(false);
+          }}
           className="text-red-800 border bg-transparent border-red-800 font-bold hover:bg-red-900/20"
         >
           Delete
